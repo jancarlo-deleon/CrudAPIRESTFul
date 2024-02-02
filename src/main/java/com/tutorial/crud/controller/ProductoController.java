@@ -53,7 +53,7 @@ public class ProductoController {
     
     
     @GetMapping("/detail-name/{name}")
-    public ResponseEntity<?> getByNombre(@PathVariable("nombre") String nombre) {
+    public ResponseEntity<?> getByNombre(@PathVariable("name") String nombre) {
         if (!productoService.existsByNombre(nombre)) {
             return new ResponseEntity<Mensaje>(new Mensaje("El producto con nombre " + nombre + " no existe"), HttpStatus.NOT_FOUND);
         }
